@@ -1,0 +1,12 @@
+.no_preview{
+    border: solid 1px gray;
+    height: 200px;
+    max-width: 100%;
+    display: none;
+}
+.preview{
+    border: solid 1px gray;
+    height: 200px;
+    max-width: 100%;
+    display: block;
+} 

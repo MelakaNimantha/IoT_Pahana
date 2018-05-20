@@ -1,0 +1,21 @@
+{
+  "name": "trademark",
+  "description": "style dependency for trademark system",
+  "main": "",
+  "authors": [
+    "Akila",
+    "Eranga"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#^2.3.1",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1"
+  }
+}
