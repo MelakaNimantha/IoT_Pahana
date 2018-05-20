@@ -1,0 +1,24 @@
+﻿<div class="col-lg- col-md-offset-2">
+    <br /> 
+    <br />
+    <br /> 
+    <br />
+    <h1>Hi {{currentUser.firstName}}!</h1>
+    <p></p>
+    <h3>Welcome </h3>
+    <!--ul>
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.firstName}} {{user.lastName}}-{{user.id}})
+            - <a (click)="deleteUser(user.id)">Delete</a>
+        </li>
+    </ul-->
+    <div align="center">
+        <button [routerLink]="['/login']" class="btn btn-primary btn-lg">LampStatus</button>
+        <br /> 
+        <br />
+        <button [routerLink]="['/lit']" class="btn btn-primary btn-lg">To-Light</button>
+        <br /> 
+        <br />
+        <button [routerLink]="['/login']" class="btn btn-primary btn-lg">Logout</button>
+    </div>
+</div>
