@@ -1,2 +1,5 @@
 .backPic{
+    background-image: url("../img/image1.JPG");
+    background-repeat: no-repeat, repeat;
+    background-size: 100% 100%;
 }
