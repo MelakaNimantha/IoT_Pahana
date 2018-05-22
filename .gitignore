@@ -1,0 +1,5 @@
+home/__pycache__
+backend/__pycache__
+home/migrations
+./db.sqlite3
+./.vscode
