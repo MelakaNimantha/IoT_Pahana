@@ -63,6 +63,7 @@ def menu(request):
         return redirect('signin')
     else:
         return render(request, "menu.html", {'user': request.user})
+        
 
 def lightup(request):
     if request.user.is_anonymous:
@@ -79,3 +80,6 @@ def lightOff(request):
     #do what ever message passing to your device
     print("off")
     return render(request, "light.html", {'status': 'off'})
+
+def lamp(request):
+    return render(request,"lamp.html",{'user' : request.user})

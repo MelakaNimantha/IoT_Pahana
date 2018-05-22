@@ -28,4 +28,5 @@ urlpatterns = [
     path('menu/lightup/', views.lightup),
     path('menu/lightup/on', views.lightOn),
     path('menu/lightup/off', views.lightOff),
+    path('menu/lamp/', views.lamp)
 ]

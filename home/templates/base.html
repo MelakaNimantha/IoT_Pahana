@@ -4,7 +4,29 @@
     <title>IOT Pahana</title>
     {% load staticfiles %}
     <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+    <script type="text/javascript">
+        var picPaths = ["{% static 'img/lamp/a1.jpg' %}","{% static 'img/lamp/a2.jpg' %}","{% static 'img/lamp/a3.jpg' %}","{% static 'img/lamp/a4.jpg' %}","{% static 'img/lamp/a5.jpg' %}"];
+        var curPic = -1;
+        //preload the images for smooth animation
+        var imgO = new Array();
+        for(i=0; i < picPaths.length; i++) {
+            imgO[i] = new Image();
+            imgO[i].src = picPaths[i];
+        }
+
+        function swapImage() {
+            curPic = (++curPic > picPaths.length-1)? 0 : curPic;
+            imgCont.src = imgO[curPic].src;
+            setTimeout(swapImage,500);
+        }
+
+        window.onload=function() {
+            imgCont = document.getElementById('imgBanner');
+            swapImage();
+        }
+    </script>
     
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
     <link rel="stylesheet" href="{% static 'css/background.css' %}" type = "text/css"/>
