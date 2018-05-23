@@ -5,7 +5,23 @@
     {% load staticfiles %}
     <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- import jquery library -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <!-- import paho MQTT library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+
+    <!-- our javascript -->
+    <script src="{% static 'js/app.js' %}"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
     
     <script type="text/javascript">
     //Begining
@@ -59,6 +75,7 @@
             }
         }
         function f1() {
+            myButtonWasClicked('Light-1');
             curPic1=-1;
             imgCont1 = document.getElementById('imgBannerB');
             document.getElementById("lamp1").style.visibility = "hidden";
@@ -85,6 +102,7 @@
             }
         }
         function f2() {
+            myButtonWasClicked('Light-2');
             curPic2=-1;
             imgCont2 = document.getElementById('imgBannerB');
             document.getElementById("lamp2").style.visibility = "hidden";
@@ -112,6 +130,7 @@
             }
         }
         function f3() {
+            myButtonWasClicked('Light-3');
             curPic3=-1;
             imgCont3 = document.getElementById('imgBannerB');
             document.getElementById("lamp3").style.visibility = "hidden";
@@ -138,6 +157,7 @@
             }
         }
         function f4() {
+            myButtonWasClicked('Light-4');
             curPic4=-1;
             imgCont4 = document.getElementById('imgBannerB');
             document.getElementById("lamp4").style.visibility = "hidden";
@@ -164,29 +184,13 @@
             }
         }
         function f5() {
+            myButtonWasClicked('Light-5');
             curPic5=-1;
             imgCont5 = document.getElementById('imgBannerB');
             document.getElementById("lamp5").style.visibility = "hidden";
             swapImage5();
         }
-    //MQTT
-    function ignite1() {
-		// Create a client instance
-		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
-		// set callback handlers
-		client.onConnectionLost = onConnectionLost;
-		client.onMessageArrived = onMessageArrived;
-		// connect the client
-		client.connect({onSuccess:onConnect1});
-		}
-    function onConnect1() {
-		  // Once a connection has been made, make a subscription and send a message.
-		  console.log("onConnect");
-		  client.subscribe("jplamp");
-		  message = new Paho.MQTT.Message("1");
-		  message.destinationName = "jplamp";
-		  client.send(message);
-		}
+
 
     </script>
     
