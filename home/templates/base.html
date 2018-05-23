@@ -168,6 +168,24 @@
             document.getElementById("lamp5").style.visibility = "hidden";
             swapImage5();
         }
+    //MQTT
+    function ignite1() {
+		// Create a client instance
+		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
+		// set callback handlers
+		client.onConnectionLost = onConnectionLost;
+		client.onMessageArrived = onMessageArrived;
+		// connect the client
+		client.connect({onSuccess:onConnect1});
+		}
+    function onConnect1() {
+		  // Once a connection has been made, make a subscription and send a message.
+		  console.log("onConnect");
+		  client.subscribe("jplamp");
+		  message = new Paho.MQTT.Message("1");
+		  message.destinationName = "jplamp";
+		  client.send(message);
+		}
 
     </script>
     
