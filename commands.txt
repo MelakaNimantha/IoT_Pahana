@@ -6,3 +6,27 @@ python manage.py makemigrations
 python manage.py migrate
 
 git push
+
+    //Lamp1
+        var picPaths1 = ["{% static 'img/lamp/f1.jpg' %}","{% static 'img/lamp/f2.jpg' %}","{% static 'img/lamp/f3.jpg' %}","{% static 'img/lamp/f4.jpg' %}","{% static 'img/lamp/f5.jpg' %}","{% static 'img/lamp/f6.jpg' %}"];
+        var curPic1 = -1;
+        //preload the images for smooth animation
+        var img1 = new Array();
+        for(i=0; i < picPaths1.length; i++) {
+            img1[i] = new Image();
+            img1[i].src = picPaths1[i];
+        }
+
+        function swapImage1() {
+            
+            curPic1 = (++curPic1 > picPaths1.length-1)? curPic1 : curPic1;
+            imgCont1.src = img1[curPic1].src;
+            setTimeout(swapImage1,500);
+        }
+
+        function f1() {
+            curPic=-1;
+            imgCont1 = document.getElementById('imgBannerB');
+            document.getElementById("lamp1").style.visibility = "hidden";
+            swapImage1();
+        }

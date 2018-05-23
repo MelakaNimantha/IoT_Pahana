@@ -18,13 +18,22 @@
         }
 
         function swapImageB() {
-            
-            curPic = (++curPic > picPathsB.length-1)? curPic : curPic;
-            imgCont.src = imgO[curPic].src;
-            setTimeout(swapImageB,500);
+            if(curPic>=picPathsB.length-1){
+                document.getElementById("lamp1").style.visibility = "visible";
+            }
+            else{
+                curPic = ++curPic
+                imgCont.src = imgO[curPic].src;
+                setTimeout(swapImageB,500);
+            }
         }
 
         window.onload=function() {
+            document.getElementById("lamp1").style.visibility = "hidden"; 
+            document.getElementById("lamp2").style.visibility = "hidden";  
+            document.getElementById("lamp3").style.visibility = "hidden";   
+            document.getElementById("lamp4").style.visibility = "hidden";   
+            document.getElementById("lamp5").style.visibility = "hidden"; 
             imgCont = document.getElementById('imgBannerB');
             swapImageB();
         }
@@ -39,15 +48,125 @@
         }
 
         function swapImage1() {
-            
-            curPic1 = (++curPic1 > picPaths1.length-1)? curPic1 : curPic1;
-            imgCont1.src = img1[curPic1].src;
-            setTimeout(swapImage1,500);
+            if(curPic1>=picPaths1.length-1){
+                document.getElementById("lamp2").style.visibility = "visible";
+            }
+            else{
+                curPic1 = ++curPic1
+                imgCont1.src = img1[curPic1].src;
+                setTimeout(swapImage1,500);
+            }
+        }
+        function f1() {
+            curPic1=-1;
+            imgCont1 = document.getElementById('imgBannerB');
+            document.getElementById("lamp1").style.visibility = "hidden";
+            swapImage1();
+        }
+    //Lamp2
+        var picPaths2 = ["{% static 'img/lamp/f7.jpg' %}","{% static 'img/lamp/f8.jpg' %}","{% static 'img/lamp/f9.jpg' %}","{% static 'img/lamp/f10.jpg' %}","{% static 'img/lamp/f11.jpg' %}"];
+        var curPic2 = -1;
+        //preload the images for smooth animation
+        var img2 = new Array();
+        for(i=0; i < picPaths2.length; i++) {
+            img2[i] = new Image();
+            img2[i].src = picPaths2[i];
         }
 
-        function f1() {
-            imgCont1 = document.getElementById('imgBannerB');
-            swapImage1();
+        function swapImage2() {
+            if(curPic2>=picPaths2.length-1){
+                document.getElementById("lamp3").style.visibility = "visible";
+            }
+            else{
+                curPic2 = ++curPic2
+                imgCont2.src = img2[curPic2].src;
+                setTimeout(swapImage2,500);
+            }
+        }
+        function f2() {
+            curPic2=-1;
+            imgCont2 = document.getElementById('imgBannerB');
+            document.getElementById("lamp2").style.visibility = "hidden";
+            swapImage2();
+        }
+
+    //Lamp3
+    var picPaths3 = ["{% static 'img/lamp/f12.jpg' %}","{% static 'img/lamp/f13.jpg' %}","{% static 'img/lamp/f14.jpg' %}","{% static 'img/lamp/f15.jpg' %}","{% static 'img/lamp/f16.jpg' %}","{% static 'img/lamp/f17.jpg' %}"];
+        var curPic3 = -1;
+        //preload the images for smooth animation
+        var img3 = new Array();
+        for(i=0; i < picPaths3.length; i++) {
+            img3[i] = new Image();
+            img3[i].src = picPaths3[i];
+        }
+
+        function swapImage3() {
+            if(curPic3>=picPaths3.length-1){
+                document.getElementById("lamp4").style.visibility = "visible";
+            }
+            else{
+                curPic3 = ++curPic3
+                imgCont3.src = img3[curPic3].src;
+                setTimeout(swapImage3,500);
+            }
+        }
+        function f3() {
+            curPic3=-1;
+            imgCont3 = document.getElementById('imgBannerB');
+            document.getElementById("lamp3").style.visibility = "hidden";
+            swapImage3();
+        }
+    //Lamp4
+    var picPaths4 = ["{% static 'img/lamp/f18.jpg' %}","{% static 'img/lamp/f19.jpg' %}","{% static 'img/lamp/f20.jpg' %}","{% static 'img/lamp/f21.jpg' %}","{% static 'img/lamp/f22.jpg' %}","{% static 'img/lamp/f23.jpg' %}"];
+        var curPic4 = -1;
+        //preload the images for smooth animation
+        var img4 = new Array();
+        for(i=0; i < picPaths4.length; i++) {
+            img4[i] = new Image();
+            img4[i].src = picPaths4[i];
+        }
+
+        function swapImage4() {
+            if(curPic4>=picPaths4.length-1){
+                document.getElementById("lamp5").style.visibility = "visible";
+            }
+            else{
+                curPic4 = ++curPic4
+                imgCont4.src = img4[curPic4].src;
+                setTimeout(swapImage4,500);
+            }
+        }
+        function f4() {
+            curPic4=-1;
+            imgCont4 = document.getElementById('imgBannerB');
+            document.getElementById("lamp4").style.visibility = "hidden";
+            swapImage4();
+        }
+    //Lamp5
+        var picPaths5 = ["{% static 'img/lamp/f24.jpg' %}","{% static 'img/lamp/f25.jpg' %}","{% static 'img/lamp/f26.jpg' %}","{% static 'img/lamp/f27.jpg' %}","{% static 'img/lamp/f28.jpg' %}","{% static 'img/lamp/f29.jpg' %}","{% static 'img/lamp/f30.jpg' %}","{% static 'img/lamp/f31.jpg' %}","{% static 'img/lamp/f32.jpg' %}","{% static 'img/lamp/f33.jpg' %}","{% static 'img/lamp/f34.jpg' %}","{% static 'img/lamp/f35.jpg' %}"];
+        var curPic5 = -1;
+        //preload the images for smooth animation
+        var img5 = new Array();
+        for(i=0; i < picPaths5.length; i++) {
+            img5[i] = new Image();
+            img5[i].src = picPaths5[i];
+        }
+
+        function swapImage5() {
+            if(curPic5>=picPaths5.length-1){
+                curPic5=curPic5;
+            }
+            else{
+                curPic5 = ++curPic5
+                imgCont5.src = img5[curPic5].src;
+                setTimeout(swapImage5,500);
+            }
+        }
+        function f5() {
+            curPic5=-1;
+            imgCont5 = document.getElementById('imgBannerB');
+            document.getElementById("lamp5").style.visibility = "hidden";
+            swapImage5();
         }
 
     </script>
