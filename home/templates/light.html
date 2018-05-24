@@ -5,24 +5,36 @@
 
 {% load staticfiles %}
 
-<h3>Lighting management</h3>
 
-<div class="row-lg-6">
-    <div class="col-lg-6">
-        <div class="form-group">
-            <button class="btn btn-default" onclick="location.href='/menu/lightup/on';">Light on</button>
-        </div>
 
-        <div class="form-group">
-            <button class="btn btn-default" onclick="location.href='/menu/lightup/off';">Light off</button>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-default" onclick="location.href='/menu/';">Back</button>
-        </div>
+
+    <div class="col-lg-6" style="top: 25%; left:60%;">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <button id="L1" onclick="myButtonWasClicked('Light-1')" class="btn btn-warning"> Lamp 1 </button>
+            <br />
+            <br />
+            <button id="L2" onclick="myButtonWasClicked('Light-2')" class="btn btn-warning"> Lamp 2 </button>
+            <br />
+            <br />
+            <button id="L3" onclick="myButtonWasClicked('Light-3')" class="btn btn-warning"> Lamp 3 </button>
+            <br />
+            <br />
+            <button id="L4" onclick="myButtonWasClicked('Light-4')" class="btn btn-warning"> Lamp 4 </button>
+            <br />
+            <br />
+            <button id="L5" onclick="myButtonWasClicked('Light-5')" class="btn btn-primary"> Lamp 5 </button>
+            <br />
+            <br />
+            <button class="btn btn-warning" onclick="location.href='/menu/';">Back</button>
 
     </div>
 
-    <div class="col-lg-6">
+    <!--div class="col-lg-6">
         {% if status == "on" %}
         <img height="500px;" src="{% static 'img/on.JPG' %}" width="500px;">
         {% endif %}
@@ -30,9 +42,7 @@
         {% if status == "off" %}
         <img height="500px;" src="{% static 'img/off.JPG' %}" width="500px;">
         {% endif %}
-    </div>
-
-    <button id="L1" onclick="myButtonWasClicked('12')" class="btn btn-warning"> Lamp 1 </button>
+    </div-->
 
 </div>
 {% endblock %}
