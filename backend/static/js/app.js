@@ -2,7 +2,7 @@
 var MQTT_CLIENT_ID = "iot_web_"+Math.floor((1 + Math.random()) * 0x10000000000).toString(16);
 
 // Create a MQTT client instance
-var MQTT_CLIENT = new Paho.MQTT.Client("broker.mqttdashboard.com",80, MQTT_CLIENT_ID);
+var MQTT_CLIENT = new Paho.MQTT.Client("iot.eclipse.org", 80, "/ws", MQTT_CLIENT_ID);
 
 // Tell the client instance to connect to the MQTT broker
 MQTT_CLIENT.connect({ onSuccess: myClientConnected });
@@ -12,7 +12,7 @@ function myButtonWasClicked(mes) {
   // create a new MQTT message with a specific payload
   var mqttMessage = new Paho.MQTT.Message(mes);
 
-  // Set the topic it should be published to
+  // Set the topic it should be published to    
   mqttMessage.destinationName = "group-iot-lamp";
 
   // Publish the message
